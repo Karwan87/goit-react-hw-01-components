@@ -1,4 +1,6 @@
 import React from 'react';
+import './friends.css';
+import PropTypes from 'prop-types';
 
 const FriendListItem = ({ avatar, name, isOnline }) => {
   return (
@@ -8,6 +10,12 @@ const FriendListItem = ({ avatar, name, isOnline }) => {
       <p className="name">{name}</p>
     </li>
   );
+};
+
+FriendListItem.propTypes = {
+  avatar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  isOnline: PropTypes.bool.isRequired,
 };
 
 const FriendList = ({ friends }) => {
@@ -23,6 +31,17 @@ const FriendList = ({ friends }) => {
       ))}
     </ul>
   );
+};
+
+FriendList.propTypes = {
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      avatar: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+    })
+  ).isRequired,
 };
 
 export default FriendList;
