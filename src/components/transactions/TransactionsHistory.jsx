@@ -1,4 +1,6 @@
 import React from 'react';
+import './TransactionsHistory.css';
+import PropTypes from 'prop-types';
 
 const TransactionsHistory = ({ items }) => {
   return (
@@ -22,6 +24,17 @@ const TransactionsHistory = ({ items }) => {
       </tbody>
     </table>
   );
+};
+
+TransactionsHistory.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      currency: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default TransactionsHistory;
