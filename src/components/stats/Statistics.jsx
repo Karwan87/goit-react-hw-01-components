@@ -1,4 +1,6 @@
 import React from 'react';
+import './data.css';
+import PropTypes from 'prop-types';
 
 const Statistics = ({ title, stats }) => {
   const generateRandomColor = () => {
@@ -23,6 +25,17 @@ const Statistics = ({ title, stats }) => {
       </ul>
     </section>
   );
+};
+
+Statistics.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    })
+  ).isRequired,
 };
 
 export default Statistics;
