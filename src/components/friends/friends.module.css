@@ -18,22 +18,25 @@
   align-items: center;
   justify-content: flex-start;
   padding-left: 25px;
+  height: 100px;
   width: 100%;
-  max-width: 320px;
+  max-width: 600px;
   margin: 0 auto;
-  margin-bottom: 10px;
+  font-size: 36px;
+  font-weight: bold;
+  margin-block: 25px;
 }
-.friendItem .status {
-  display: inline-block;
+
+.friendItem .online {
+  background-color: green;
   width: 20px;
   height: 20px;
   border-radius: 50%;
 }
 
-.friendItem .status.online {
-  background-color: green;
-}
-
-.friendItem .status.offline {
+.friendItem .offline {
   background-color: red;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
 }

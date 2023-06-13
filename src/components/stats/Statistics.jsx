@@ -1,5 +1,5 @@
 import React from 'react';
-import './data.css';
+import styles from './data.module.css';
 import PropTypes from 'prop-types';
 
 const Statistics = ({ title, stats }) => {
@@ -9,17 +9,17 @@ const Statistics = ({ title, stats }) => {
   };
 
   return (
-    <section className="statistics">
-      {title && <h2 className="title">{title}</h2>}
-      <ul className="stat-list">
+    <section className={styles.statistics}>
+      {title && <h2 className={styles.title}>{title}</h2>}
+      <ul className={styles['stat-list']}>
         {stats.map(stat => (
           <li
             key={stat.id}
-            className="item"
+            className={styles.item}
             style={{ backgroundColor: generateRandomColor() }}
           >
-            <span className="label">{stat.label}</span>
-            <span className="percentage">{stat.percentage}%</span>
+            <span className={styles.label}>{stat.label}</span>
+            <span className={styles.percentage}>{stat.percentage}%</span>
           </li>
         ))}
       </ul>
